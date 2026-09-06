@@ -208,72 +208,106 @@ This file is generated from repository truth and bounded for the web channel. It
     "acceptance": {
       "policy": "solution-admission-v1"
     },
-    "aliases": [],
+    "aliases": [
+      "Open Problem Garden OPG-47356"
+    ],
     "allowed_axioms": [
-      "none"
+      "finite-graph-basic",
+      "planar-graph-basic",
+      "finite-combinatorics"
     ],
     "assumptions": [
-      "This record must never be treated as an active research problem."
+      "All graphs and digraphs are finite and simple unless the statement explicitly says otherwise."
     ],
     "constraints": {
       "allowed_adapters": [
-        "template-validation-v1"
+        "prism-hamilton-decomposition-sat-v1",
+        "lean-obligation-v1"
       ],
       "allowed_methods": [
-        "discovery"
+        "discovery",
+        "derivation",
+        "computation",
+        "proof",
+        "formalization"
       ],
-      "max_attempts": 1,
+      "max_attempts": 20,
       "runtime": {
-        "max_output_bytes": 65536,
-        "max_retries": 1,
-        "max_transitions": 10,
-        "timeout_seconds": 60
+        "max_output_bytes": 5242880,
+        "max_retries": 3,
+        "max_transitions": 300,
+        "timeout_seconds": 1800
       }
     },
-    "created_at": "2026-09-06T00:00:00Z",
+    "created_at": "2026-09-06T04:47:54Z",
     "definitions": [
       {
-        "definition": "A non-admitted draft record used only to validate the physical public repository template.",
-        "term": "template placeholder"
+        "definition": "The Cartesian product with two copies of G and one matching joining corresponding vertices.",
+        "term": "prism G□K₂"
+      },
+      {
+        "definition": "A cycle containing every vertex exactly once.",
+        "term": "Hamilton cycle"
+      },
+      {
+        "definition": "A partition of the full edge set into Hamilton cycles.",
+        "term": "Hamilton decomposition"
       }
     ],
     "domain": {
-      "description": "Template-only placeholder domain; not a mathematical research question.",
+      "description": "Prism graphs over finite simple 3-connected cubic planar graphs.",
       "objects": [
-        "template-placeholder"
+        "Cartesian graph product",
+        "prism graph",
+        "Hamilton cycle",
+        "Hamilton decomposition"
       ]
     },
-    "lifecycle": "draft",
+    "lifecycle": "active",
     "msc": [
-      "00A00"
+      "05C45"
     ],
-    "problem_id": "problem:template-placeholder",
+    "problem_id": "problem:opg-47356-prism-hamilton-decomposition",
     "quantifiers": [
       {
-        "domain": "a reviewed public canonical ProblemContract supplied by the repository builder",
-        "kind": "find",
+        "domain": "finite simple 3-connected cubic planar graphs",
+        "kind": "forall",
         "variables": [
-          "replacement_problem"
+          "G"
+        ]
+      },
+      {
+        "domain": "edge-disjoint Hamilton cycles of G□K₂ whose edge sets partition E(G□K₂)",
+        "kind": "exists",
+        "variables": [
+          "C₁",
+          "C₂"
         ]
       }
     ],
     "schema_version": "1.0.0",
     "sources": [
       {
-        "retrieved_at": "2026-09-06T00:00:00Z",
-        "source": "Vibe Mathing public Web Harness",
-        "source_record_id": "public-template-placeholder-v1",
-        "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template"
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath",
+        "source_record_id": "unsolvedmath-opg-47356-3e6a1eca6bbc",
+        "url": "https://www.unsolvedmath.com/problems/OPG-47356"
+      },
+      {
+        "retrieved_at": "2026-09-06T04:47:54Z",
+        "source": "current-status-review",
+        "source_record_id": null,
+        "url": "https://www.openproblemgarden.org/op/decomposing_the_prism_of_a_3_connected_cubic_planar_graphs_in_hamilton_cycles"
       }
     ],
     "statement": {
       "language": "en",
-      "text": "This is a non-research placeholder. Replace it with exactly one reviewed public ProblemContract before creating a public problem repository.",
+      "text": "For every finite simple 3-connected cubic planar graph G, can the edge set of the prism G□K₂ be partitioned into two Hamilton cycles?",
       "version": 1
     },
-    "title": "Vibe Mathing public problem repository template placeholder",
-    "updated_at": "2026-09-06T00:00:00Z"
+    "title": "Hamilton decomposition of prisms over cubic planar graphs",
+    "updated_at": "2026-09-06T04:47:54Z"
   },
-  "problem_contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940"
+  "problem_contract_sha256": "afafc8b179157d1e9583431060a7fdadf5fafed1dc354d189c97819b22d6bab3"
 }
 ```
